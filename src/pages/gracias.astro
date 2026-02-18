@@ -2,64 +2,75 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Gracias - GoodGYM" description="Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo muy pronto.">
-  <section class="min-h-screen flex items-center justify-center bg-gray-50">
+<Layout title="Gracias - GoodGYM" description="Gracias por contactarnos. Te responderemos a la brevedad.">
+  <section class="min-h-screen flex items-center justify-center bg-gray-50 py-20">
     <div class="container mx-auto px-4">
       <div class="max-w-2xl mx-auto text-center">
-        <div class="mb-8">
+        <div class="bg-white rounded-2xl shadow-lg p-12">
+          <!-- Success Icon -->
           <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
             </svg>
           </div>
-          <h1 class="text-4xl font-bold text-gray-900 mb-4">¡Gracias por contactarnos!</h1>
-          <p class="text-xl text-gray-600 mb-8">
-            Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo muy pronto.
+
+          <!-- Success Message -->
+          <h1 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            ¡Gracias por contactarnos!
+          </h1>
+          
+          <p class="text-lg text-gray-600 mb-8">
+            Hemos recibido tu mensaje y te responderemos a la brevedad posible.
           </p>
-        </div>
-        
-        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
-          <h2 class="text-2xl font-semibold text-gray-900 mb-4">¿Qué sigue?</h2>
-          <div class="space-y-4 text-left">
+
+          <!-- Next Steps -->
+          <div class="space-y-4 text-left max-w-md mx-auto">
             <div class="flex items-start space-x-3">
-              <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                 <span class="text-white text-sm font-bold">1</span>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900">Recepción de tu mensaje</h3>
-                <p class="text-gray-600">Hemos recibido tu solicitud y la estamos procesando.</p>
+                <h3 class="font-semibold text-gray-900">Revisa tu email</h3>
+                <p class="text-gray-600">Te enviaremos una confirmación a <span class="font-medium">baristrobrunch@gmail.com</span></p>
               </div>
             </div>
-            
+
             <div class="flex items-start space-x-3">
-              <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                 <span class="text-white text-sm font-bold">2</span>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900">Contacto en 24 horas</h3>
-                <p class="text-gray-600">Uno de nuestros entrenadores se comunicará contigo.</p>
+                <h3 class="font-semibold text-gray-900">Síguenos en redes sociales</h3>
+                <p class="text-gray-600">Mantente informado sobre nuestras promociones y eventos</p>
               </div>
             </div>
-            
+
             <div class="flex items-start space-x-3">
-              <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                 <span class="text-white text-sm font-bold">3</span>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900">Evaluación gratuita</h3>
-                <p class="text-gray-600">Recibirás una evaluación física sin compromiso.</p>
+                <h3 class="font-semibold text-gray-900">Visita el gimnasio</h3>
+                <p class="text-gray-600">Conoce nuestras instalaciones y recibe una visita guiada</p>
               </div>
             </div>
           </div>
-        </div>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors">
-            Volver al inicio
-          </a>
-          <a href="#contact" class="border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">
-            Hacer otra consulta
-          </a>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <a 
+              href="/" 
+              class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors text-center"
+            >
+              Volver al inicio
+            </a>
+            <a 
+              href="tel:+1234567890" 
+              class="border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors text-center"
+            >
+              Llamar ahora
+            </a>
+          </div>
         </div>
       </div>
     </div>

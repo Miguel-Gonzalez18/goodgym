@@ -19,6 +19,12 @@
         <h3 class="text-2xl font-bold mb-6">Solicita información</h3>
         
         <form class="space-y-6" id="contact-form">
+          <input type="hidden" name="sendTo" value="baristrobrunch@gmail.com, leads@infomediapr.com">
+          <input type="hidden" name="titleWeb" value="GoodGYM">
+          <input type="hidden" name="fromEmail" value="formularios@infopaginas.com">
+          <input type="hidden" name="secret" value="6Lci9mcsAAAAAAUf6S8tbPZvC9lcqkOX0mJsNlXY">
+          <input type="hidden" name="Fecha" id="form-date">
+          <input type="hidden" name="ID" id="form-id">
           <div class="grid md:grid-cols-2 gap-4">
             <div>
               <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
@@ -214,18 +220,106 @@
 </section>
 
 <script>
-  document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+  document.getElementById('contact-form')?.addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const formMessage = document.getElementById('form-message');
-    formMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
-    formMessage.textContent = '¡Gracias! Nos pondremos en contacto contigo muy pronto.';
-    formMessage.classList.remove('hidden');
+    const submitButton = document.getElementById('contact-submit');
     
-    this.reset();
+    if (!formMessage || !submitButton) return;
     
-    setTimeout(() => {
-      formMessage.classList.add('hidden');
-    }, 5000);
+    // Generar ID único
+    const uniqueId = 'ID-' + Math.floor(Math.random() * 1000000);
+    document.getElementById('form-id').value = uniqueId;
+    
+    // Generar fecha actual
+    const currentDate = new Date().toISOString().split('T')[0];
+    document.getElementById('form-date').value = currentDate;
+    
+    // Deshabilitar botón
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<div class="flex items-center justify-center"><svg class="animate-spin h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Enviando...</div>';
+    
+    try {
+      // Cargar reCAPTCHA
+      if (typeof grecaptcha === 'undefined') {
+        const script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js?render=6Lci9mcsAAAAAPELpBREm-M3gp-ue3wZ7K44Ol8N';
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+      }
+      
+      // Esperar a que reCAPTCHA esté listo
+      const waitForRecaptcha = () => {
+        return new Promise((resolve) => {
+          if (typeof grecaptcha !== 'undefined') {
+            resolve();
+          } else {
+            setTimeout(waitForRecaptcha, 100);
+          }
+        });
+      };
+      
+      await waitForRecaptcha();
+      
+      // Ejecutar reCAPTCHA
+      const recaptchaToken = await new Promise((resolve, reject) => {
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6Lci9mcsAAAAAPELpBREm-M3gp-ue3wZ7K44Ol8N', { action: 'contact' })
+            .then(function(token) {
+              resolve(token);
+            })
+            .catch(reject);
+        });
+      });
+      
+      // Enviar formulario
+      const formData = new FormData(this);
+      formData.append('recaptchaToken', recaptchaToken);
+      
+      const response = await fetch('/formSend.php', {
+        method: 'POST',
+        body: formData,
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        formMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
+        formMessage.textContent = '¡Gracias! Nos pondremos en contacto contigo muy pronto.';
+        formMessage.classList.remove('hidden');
+        
+        // Redirigir a página de gracias
+        setTimeout(() => {
+          window.location.href = '/gracias';
+        }, 2000);
+        
+        this.reset();
+      } else {
+        throw new Error(result.error || 'Error al enviar el mensaje');
+      }
+      
+    } catch (error) {
+      formMessage.className = 'mt-4 p-4 rounded-lg bg-red-100 text-red-800';
+      formMessage.textContent = 'Error: ' + error.message;
+      formMessage.classList.remove('hidden');
+    } finally {
+      // Restaurar botón
+      submitButton.disabled = false;
+      submitButton.innerHTML = 'Enviar solicitud';
+    }
   });
+  
+  // Mover badge de reCAPTCHA
+  const moveRecaptchaBadge = () => {
+    const badge = document.querySelector('.grecaptcha-badge');
+    if (badge) {
+      badge.style.bottom = '90px';
+    }
+  };
+  
+  setTimeout(moveRecaptchaBadge, 100);
+  setTimeout(moveRecaptchaBadge, 1000);
+  setTimeout(moveRecaptchaBadge, 2000);
 </script>

@@ -1,0 +1,61 @@
+---
+export interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = "/" } = Astro.props;
+---
+
+<header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 bg-linear-to-r from-primary to-primary-dark rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-xl">G</span>
+        </div>
+        <span class="text-2xl font-bold text-dark">GoodGYM</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#services" class="text-gray-700 hover:text-primary transition-colors font-medium">Servicios</a>
+        <a href="#testimonials" class="text-gray-700 hover:text-primary transition-colors font-medium">Testimonios</a>
+        <a href="#pricing" class="text-gray-700 hover:text-primary transition-colors font-medium">Precios</a>
+        <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium">Contacto</a>
+        <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors font-semibold">
+          Empezar Ahora
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
+      <div class="flex flex-col space-y-3">
+        <a href="#services" class="text-gray-700 hover:text-primary transition-colors font-medium">Servicios</a>
+        <a href="#testimonials" class="text-gray-700 hover:text-primary transition-colors font-medium">Testimonios</a>
+        <a href="#pricing" class="text-gray-700 hover:text-primary transition-colors font-medium">Precios</a>
+        <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium">Contacto</a>
+        <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors font-semibold w-full">
+          Empezar Ahora
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

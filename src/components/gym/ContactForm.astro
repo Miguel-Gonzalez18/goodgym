@@ -1,0 +1,176 @@
+---
+import { Send } from "@lucide/astro"
+---
+
+<div class="w-full p-4">
+  <form id="form" class="space-y-4">
+    <div class="flex flex-col gap-2">
+      <label for="name" class="text-sm font-medium text-white font-montserrat">Nombre</label>
+      <input
+        type="text"
+        id="name"
+        name="Nombre"
+        required
+        aria-required="true"
+        placeholder="Ingrese su nombre"
+        class="focus-visible:outline-secondary rounded-md border border-zinc-200 bg-zinc-50 px-3 py-3 text-sm text-black placeholder:text-zinc-500 focus-visible:outline"
+      />
+    </div>
+    <div class="flex flex-col gap-2">
+      <label for="lastname" class="text-sm font-medium text-white font-montserrat"
+        >Apellido</label
+      >
+      <input
+        type="text"
+        id="lastname"
+        name="Apellido"
+        required
+        aria-required="true"
+        placeholder="Ingrese su apellido"
+        class="focus-visible:outline-secondary rounded-md border border-zinc-200 bg-zinc-50 px-3 text-black py-3 text-sm placeholder:text-zinc-500 focus-visible:outline"
+      />
+    </div>
+    <div class="flex flex-col gap-2">
+      <label for="email" class="text-sm font-medium text-white font-montserrat">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="Email"
+        required
+        aria-required="true"
+        placeholder="Ingrese su email"
+        class="focus-visible:outline-secondary rounded-md border border-zinc-200 text-black bg-zinc-50 px-3 py-3 text-sm placeholder:text-zinc-500 focus-visible:outline"
+      />
+    </div>
+    <div class="flex flex-col gap-2">
+      <label for="phone" class="text-sm font-medium text-white font-montserrat"
+        >Teléfono</label
+      >
+      <input
+        type="tel"
+        id="phone"
+        name="Telefono"
+        placeholder="Ingrese su teléfono"
+        class="focus-visible:outline-secondary rounded-md border border-zinc-200 text-black bg-zinc-50 px-3 py-3 text-sm placeholder:text-zinc-500 focus-visible:outline"
+      />
+    </div>
+    <div class="flex flex-col gap-2">
+      <label for="message" class="text-sm font-medium text-white font-montserrat"
+        >Mensaje</label
+      >
+      <textarea
+        id="message"
+        name="Mensaje"
+        required
+        aria-required="true"
+        placeholder="Ingrese su mensaje"
+        class="focus-visible:outline-secondary max-h-[300px] min-h-[100px] rounded-md border text-black border-zinc-200 bg-zinc-50 px-3 py-3 text-sm placeholder:text-zinc-500 focus-visible:outline"
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      id="contact-submit"
+      class="bg-primary hover:bg-primary-dark cursor-pointer rounded-md px-12 py-2 text-white transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-50 font-semibold"
+      >Enviar <Send class="ml-2 h-4 w-4" />
+    </button>
+  </form>
+</div>
+
+<script type='module'>
+  function Email() {
+    const form = document.getElementById("form");
+    const button = document.getElementById("contact-submit");
+
+    const setLoading = (isLoading) => {
+      button.disabled = isLoading;
+      if (isLoading) {
+        button.innerHTML = "<div class='flex items-center gap-2'><svg class='animate-spin h-4 w-4' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'><circle class='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' stroke-width='4'></circle><path class='opacity-75' fill='currentColor' d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'></path></svg>Enviando...</div>";
+      } else {
+        button.innerHTML = "Enviar <svg class='ml-2 h-4 w-4' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='2' x2='11' y2='13'></line><polygon points='22 2 15 22 11 13 2 9 22 2'></polygon></svg>";
+      }
+    };
+
+    const loadRecaptcha = () => {
+      const script = document.createElement('script');
+      script.src = "https://www.google.com/recaptcha/api.js?render=6Lci9mcsAAAAAPELpBREm-M3gp-ue3wZ7K44Ol8N";
+      document.head.appendChild(script);
+    };
+
+    loadRecaptcha();
+    // Forzar posición del badge de reCAPTCHA
+    const moveRecaptchaBadge = () => {
+      const badge = document.querySelector('.grecaptcha-badge');
+      if (badge) {
+        badge.style.bottom = '90px';
+      }
+    };
+    
+    // Intentar mover el badge inmediatamente y después de un tiempo
+    setTimeout(moveRecaptchaBadge, 100);
+    setTimeout(moveRecaptchaBadge, 1000);
+    setTimeout(moveRecaptchaBadge, 2000);
+
+    const sendForm = async (e) => {
+      e.preventDefault();
+
+      if (button.disabled) return;
+
+      setLoading(true);
+
+      const formData = new FormData(form);
+
+      try {
+        const recaptchaToken = await new Promise((resolve, reject) => {
+          grecaptcha.ready(function() {
+            grecaptcha.execute('6Lci9mcsAAAAAPELpBREm-M3gp-ue3wZ7K44Ol8N', { action: 'contact' })
+              .then(function(token) {
+                resolve(token);
+              })
+              .catch(reject);
+          });
+        });
+
+        formData.append("sendTo", "baristrobrunch@gmail.com, leads@infomediapr.com");
+        formData.append("titleWeb", "GoodGYM");
+        formData.append("fromEmail", "formularios@infopaginas.com");
+        formData.append("recaptchaToken", recaptchaToken);
+        formData.append("secret", "6Lci9mcsAAAAAAUf6S8tbPZvC9lcqkOX0mJsNlXY");
+        formData.append("Fecha", new Date().toISOString().split("T")[0]);
+        formData.append("ID", "ID-" + Math.floor(Math.random() * 1000000));
+        formData.append("method", "POST");
+
+        const response = await fetch("/formSend.php", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (result.error) {
+          throw new Error(result.error);
+        }
+
+        await fetch("https://script.google.com/macros/s/AKfycbytTe2O8usDwCRYrmDDtmR_KEYSJkNvxYZkazbuZ0McyM4x9EOPzuDXn2JCShA7tBFgaQ/exec", {
+          method: "POST",
+          body: formData,
+        });
+      } catch (err) {
+        console.error("❌ Error:", err);
+        alert("Error al enviar el mensaje: " + err.message);
+        setLoading(false);
+      } finally {
+        form.reset();
+        window.location.href = "/gracias";
+      }
+    };
+
+    if (form && button) {
+      form.removeEventListener("submit", sendForm);
+      form.addEventListener("submit", sendForm);
+    }
+  }
+
+  Email();
+  document.addEventListener("astro:after-swap", Email);
+  document.addEventListener("astro:page-load", Email);
+</script>

@@ -1,0 +1,238 @@
+---
+---
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex-1">
+        <p class="text-sm">
+          <span class="font-semibold">🍪 Cookies:</span> Usamos cookies para mejorar tu experiencia en nuestro sitio. 
+          Al continuar navegando, aceptas nuestra 
+          <a href="/politica-privacidad" class="text-primary hover:text-primary-dark underline ml-1">política de privacidad</a>.
+        </p>
+      </div>
+      <div class="flex gap-2">
+        <button 
+          id="cookie-accept" 
+          class="bg-primary hover:bg-primary-dark px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+        >
+          Aceptar todas
+        </button>
+        <button 
+          id="cookie-reject" 
+          class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+        >
+          Rechazar
+        </button>
+        <button 
+          id="cookie-settings" 
+          class="border border-gray-600 hover:border-gray-500 px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+        >
+          Configurar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+  <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-900">Configuración de Cookies</h2>
+        <button id="close-settings" class="text-gray-500 hover:text-gray-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="space-y-6">
+        <!-- Cookies Esenciales -->
+        <div class="border border-gray-200 rounded-lg p-4">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-semibold text-gray-900">Cookies Esenciales</h3>
+            <input type="checkbox" id="essential-cookies" checked disabled class="w-4 h-4 text-primary">
+          </div>
+          <p class="text-sm text-gray-600">
+            Son necesarias para el funcionamiento básico del sitio. No se pueden desactivar.
+          </p>
+        </div>
+        
+        <!-- Cookies Analíticas -->
+        <div class="border border-gray-200 rounded-lg p-4">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-semibold text-gray-900">Cookies Analíticas</h3>
+            <input type="checkbox" id="analytics-cookies" class="w-4 h-4 text-primary">
+          </div>
+          <p class="text-sm text-gray-600">
+            Nos ayudan a entender cómo los usuarios interactúan con nuestro sitio para mejorarlo.
+          </p>
+        </div>
+        
+        <!-- Cookies de Marketing -->
+        <div class="border border-gray-200 rounded-lg p-4">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-semibold text-gray-900">Cookies de Marketing</h3>
+            <input type="checkbox" id="marketing-cookies" class="w-4 h-4 text-primary">
+          </div>
+          <p class="text-sm text-gray-600">
+            Se utilizan para mostrar anuncios relevantes y medir la efectividad de campañas.
+          </p>
+        </div>
+      </div>
+      
+      <div class="flex gap-3 mt-6">
+        <button id="save-settings" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+          Guardar preferencias
+        </button>
+        <button id="accept-all-settings" class="bg-gray-200 hover:bg-gray-300 text-gray-900 px-6 py-2 rounded-lg font-semibold transition-colors">
+          Aceptar todas
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Cookie Consent Management
+  class CookieConsent {
+    consent: any;
+    
+    constructor() {
+      this.consent = this.getConsent();
+      this.init();
+    }
+
+    init() {
+      // Solo mostrar el banner si no hay consentimiento previo
+      if (!this.consent) {
+        this.showBanner();
+      } else {
+        this.applyConsent(this.consent);
+      }
+
+      this.bindEvents();
+    }
+
+    getConsent() {
+      const stored = localStorage.getItem('cookie-consent');
+      return stored ? JSON.parse(stored) : null;
+    }
+
+    setConsent(consent) {
+      localStorage.setItem('cookie-consent', JSON.stringify(consent));
+      this.consent = consent;
+      this.applyConsent(consent);
+    }
+
+    showBanner() {
+      setTimeout(() => {
+        document.getElementById('cookie-banner').classList.remove('translate-y-full');
+      }, 1000);
+    }
+
+    hideBanner() {
+      document.getElementById('cookie-banner').classList.add('translate-y-full');
+    }
+
+    showSettings() {
+      document.getElementById('cookie-settings-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    hideSettings() {
+      document.getElementById('cookie-settings-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    applyConsent(consent) {
+      // Aplicar configuración de cookies
+      if (consent.analytics) {
+        console.log('Analytics cookies enabled');
+        // Aquí cargar Google Analytics, etc.
+      }
+
+      if (consent.marketing) {
+        console.log('Marketing cookies enabled');
+        // Aquí cargar píxeles de marketing, etc.
+      }
+
+      // Las cookies esenciales siempre están activas
+      console.log('Essential cookies always active');
+    }
+
+    bindEvents() {
+      // Botones del banner principal
+      document.getElementById('cookie-accept')?.addEventListener('click', () => {
+        this.setConsent({
+          essential: true,
+          analytics: true,
+          marketing: true
+        });
+        this.hideBanner();
+      });
+
+      document.getElementById('cookie-reject')?.addEventListener('click', () => {
+        this.setConsent({
+          essential: true,
+          analytics: false,
+          marketing: false
+        });
+        this.hideBanner();
+      });
+
+      document.getElementById('cookie-settings')?.addEventListener('click', () => {
+        this.showSettings();
+      });
+
+      // Botones del modal de configuración
+      document.getElementById('close-settings')?.addEventListener('click', () => {
+        this.hideSettings();
+      });
+
+      document.getElementById('save-settings')?.addEventListener('click', () => {
+        const analyticsCheckbox = document.getElementById('analytics-cookies') as HTMLInputElement;
+        const marketingCheckbox = document.getElementById('marketing-cookies') as HTMLInputElement;
+        
+        this.setConsent({
+          essential: true,
+          analytics: analyticsCheckbox?.checked || false,
+          marketing: marketingCheckbox?.checked || false
+        });
+        this.hideSettings();
+        this.hideBanner();
+      });
+
+      document.getElementById('accept-all-settings')?.addEventListener('click', () => {
+        this.setConsent({
+          essential: true,
+          analytics: true,
+          marketing: true
+        });
+        this.hideSettings();
+        this.hideBanner();
+      });
+
+      // Cerrar modal al hacer clic fuera
+      document.getElementById('cookie-settings-modal')?.addEventListener('click', (e: Event) => {
+        const target = e.target as HTMLElement;
+        if (target?.id === 'cookie-settings-modal') {
+          this.hideSettings();
+        }
+      });
+    }
+  }
+
+  // Inicializar cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    new CookieConsent();
+  });
+
+  // Para Astro navigation
+  document.addEventListener('astro:after-swap', () => {
+    new CookieConsent();
+  });
+</script>

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import CookiesConsent from '../components/gym/CookiesConsent.astro';
 export interface Props {
 	title: string;
 	description?: string;
@@ -15,8 +16,43 @@ const { title, description = "Transforma tu cuerpo y tu vida en GoodGYM - El mej
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="canonical" href={Astro.url.href} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		
+		<!-- Schema.org structured data -->
+		<script type="application/ld+json">
+		{{
+			JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				"name": "GoodGYM",
+				"description": description,
+				"url": "https://goodgym.com",
+				"telephone": "+1 234 567 890",
+				"email": "info@goodgym.com",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "123 Fitness St, Gym City",
+					"addressLocality": "Gym City",
+					"addressRegion": "State",
+					"postalCode": "12345",
+					"addressCountry": "US"
+				},
+				"openingHours": [
+					"Mo-Fr 05:00-23:00",
+					"Sa 06:00-22:00",
+					"Su 07:00-20:00"
+				],
+				"priceRange": "$$",
+				"image": "/og-image.jpg",
+				"sameAs": [
+					"https://facebook.com/goodgym",
+					"https://instagram.com/goodgym",
+					"https://twitter.com/goodgym"
+				]
+			})
+		}}</script>
 		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
@@ -32,6 +68,7 @@ const { title, description = "Transforma tu cuerpo y tu vida en GoodGYM - El mej
 	</head>
 	<body>
 		<slot />
+		<CookiesConsent />
 	</body>
 </html>
 

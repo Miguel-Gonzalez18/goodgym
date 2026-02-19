@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://goodgym.com/sitemap.xml
+
+# Crawl delay for slower servers (optional)
+Crawl-delay: 1

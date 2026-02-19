@@ -1,0 +1,105 @@
+---
+interface Props {
+  type: 'LocalBusiness' | 'Organization' | 'Service' | 'AggregateRating';
+  data?: Record<string, any>;
+}
+
+const { type, data = {} } = Astro.props;
+
+let schema: Record<string, any> = {};
+
+if (type === 'LocalBusiness') {
+  schema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    'name': 'GoodGYM',
+    'image': 'https://goodgym.com/logo.png',
+    'description': 'Gimnasio premium con entrenadores profesionales, equipo de última generación y acceso 24/7',
+    'address': {
+      '@type': 'PostalAddress',
+      'streetAddress': '123 Fitness St',
+      'addressLocality': 'Gym City',
+      'addressRegion': 'State',
+      'postalCode': '12345',
+      'addressCountry': 'Country'
+    },
+    'telephone': '+1 234 567 890',
+    'email': 'info@goodgym.com',
+    'url': 'https://goodgym.com',
+    'priceRange': '$$$',
+    'openingHoursSpecification': [
+      {
+        '@type': 'OpeningHoursSpecification',
+        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        'opens': '05:00',
+        'closes': '23:00'
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        'dayOfWeek': 'Saturday',
+        'opens': '06:00',
+        'closes': '22:00'
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        'dayOfWeek': 'Sunday',
+        'opens': '07:00',
+        'closes': '20:00'
+      }
+    ],
+    'sameAs': [
+      'https://www.facebook.com/goodgym',
+      'https://www.instagram.com/goodgym',
+      'https://www.twitter.com/goodgym'
+    ]
+  };
+} else if (type === 'Organization') {
+  schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    'name': 'GoodGYM',
+    'url': 'https://goodgym.com',
+    'logo': 'https://goodgym.com/logo.png',
+    'description': 'Gimnasio premium transformando vidas a través del fitness',
+    'sameAs': [
+      'https://www.facebook.com/goodgym',
+      'https://www.instagram.com/goodgym',
+      'https://www.twitter.com/goodgym'
+    ],
+    'contactPoint': {
+      '@type': 'ContactPoint',
+      'contactType': 'Customer Service',
+      'telephone': '+1 234 567 890',
+      'email': 'info@goodgym.com'
+    }
+  };
+} else if (type === 'Service') {
+  schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    'name': data.name || 'Servicio GoodGYM',
+    'description': data.description || '',
+    'provider': {
+      '@type': 'LocalBusiness',
+      'name': 'GoodGYM',
+      'url': 'https://goodgym.com'
+    },
+    'areaServed': 'Gym City',
+    'availableChannel': {
+      '@type': 'ServiceChannel',
+      'serviceUrl': data.serviceUrl || 'https://goodgym.com'
+    }
+  };
+} else if (type === 'AggregateRating') {
+  schema = {
+    '@context': 'https://schema.org',
+    '@type': 'AggregateRating',
+    'ratingValue': data.ratingValue || '4.8',
+    'ratingCount': data.ratingCount || '150',
+    'bestRating': '5',
+    'worstRating': '1'
+  };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

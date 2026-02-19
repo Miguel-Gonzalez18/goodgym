@@ -1,0 +1,145 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/gym/Header.astro';
+import Footer from '../../components/gym/Footer.astro';
+import SchemaMarkup from '../../components/SchemaMarkup.astro';
+---
+
+<Layout title="Nutrición en GoodGYM | Planes Personalizados" description="Planes nutricionales personalizados con expertos. Dietas adaptadas a tus objetivos, suplementación y seguimiento continuo. ¡Optimiza tus resultados!">
+	<SchemaMarkup type="Service" data={{name: "Nutrición", description: "Planes nutricionales personalizados y consultas con expertos", serviceUrl: "https://goodgym.com/servicios/nutricion"}} />
+	<Header />
+	
+	<main class="pt-24">
+		<!-- Hero Section -->
+		<section class="py-20 bg-linear-to-br from-gray-900 to-gray-800 text-white">
+			<div class="container mx-auto px-4">
+				<div class="max-w-3xl">
+					<h1 class="text-5xl md:text-6xl font-bold font-display mb-6">
+						Nutrición <span class="text-primary">Experta</span>
+					</h1>
+					<p class="text-xl text-gray-300 mb-8">
+						Planes nutricionales personalizados diseñados por expertos para maximizar tus resultados de entrenamiento
+					</p>
+					<a href="/#contact" class="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+						Consultar Nutricionista
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Services Section -->
+		<section class="py-20 bg-white">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold mb-12 text-center">Nuestros Servicios Nutricionales</h2>
+				
+				<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Dietas Personalizadas</h3>
+						<p class="text-gray-600 mb-4">Planes de alimentación diseñados específicamente para tus objetivos, preferencias y restricciones dietéticas</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Análisis de necesidades calóricas</li>
+							<li>✓ Macronutrientes balanceados</li>
+							<li>✓ Menús variados y deliciosos</li>
+							<li>✓ Ajustes según progreso</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Suplementación</h3>
+						<p class="text-gray-600 mb-4">Recomendaciones de suplementos de calidad para potenciar tus entrenamientos y recuperación</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Evaluación de necesidades</li>
+							<li>✓ Productos certificados</li>
+							<li>✓ Asesoramiento continuo</li>
+							<li>✓ Descuentos especiales</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Seguimiento Continuo</h3>
+						<p class="text-gray-600 mb-4">Revisiones regulares de tu progreso y ajustes en tu plan nutricional según tus resultados</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Consultas mensuales</li>
+							<li>✓ Análisis de composición corporal</li>
+							<li>✓ Ajustes de macros</li>
+							<li>✓ Soporte continuo</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Educación Nutricional</h3>
+						<p class="text-gray-600 mb-4">Aprende sobre nutrición, lectura de etiquetas y hábitos saludables para la vida</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Talleres educativos</li>
+							<li>✓ Guías de alimentos</li>
+							<li>✓ Recetas saludables</li>
+							<li>✓ Cambios de hábitos</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Benefits Section -->
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold mb-12 text-center">¿Por qué la nutrición es importante?</h2>
+				
+				<div class="max-w-3xl mx-auto">
+					<p class="text-lg text-gray-600 mb-8">
+						La nutrición es el 70% del éxito en tu transformación física. Sin una alimentación adecuada, tus entrenamientos no rendirán al máximo. Nuestros expertos te ayudarán a:
+					</p>
+					
+					<div class="grid md:grid-cols-2 gap-6">
+						<div class="flex gap-3">
+							<span class="text-primary font-bold text-2xl">✓</span>
+							<div>
+								<h3 class="font-bold mb-2">Acelerar tu metabolismo</h3>
+								<p class="text-gray-600">Con planes diseñados para optimizar tu quema de calorías</p>
+							</div>
+						</div>
+
+						<div class="flex gap-3">
+							<span class="text-primary font-bold text-2xl">✓</span>
+							<div>
+								<h3 class="font-bold mb-2">Ganar músculo magro</h3>
+								<p class="text-gray-600">Nutrición estratégica para máxima ganancia muscular</p>
+							</div>
+						</div>
+
+						<div class="flex gap-3">
+							<span class="text-primary font-bold text-2xl">✓</span>
+							<div>
+								<h3 class="font-bold mb-2">Mejorar tu energía</h3>
+								<p class="text-gray-600">Alimentación que te mantiene energizado todo el día</p>
+							</div>
+						</div>
+
+						<div class="flex gap-3">
+							<span class="text-primary font-bold text-2xl">✓</span>
+							<div>
+								<h3 class="font-bold mb-2">Recuperación óptima</h3>
+								<p class="text-gray-600">Nutrientes clave para una recuperación rápida</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="py-20 bg-primary text-white">
+			<div class="container mx-auto px-4 text-center">
+				<h2 class="text-4xl font-bold mb-6">Optimiza tu nutrición hoy</h2>
+				<p class="text-xl mb-8 max-w-2xl mx-auto">
+					Consulta con nuestros expertos y crea el plan nutricional perfecto para ti
+				</p>
+				<a href="/#contact" class="inline-block bg-white text-primary px-10 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+					Agendar Consulta
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

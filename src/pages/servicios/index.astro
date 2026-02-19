@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/gym/Header.astro';
+import Footer from '../../components/gym/Footer.astro';
+import SchemaMarkup from '../../components/SchemaMarkup.astro';
+---
+
+<Layout title="Servicios GoodGYM | Entrenamiento Personal, Clases, Nutrición y Más" description="Descubre todos nuestros servicios: entrenamiento personal, clases grupales, nutrición, spa & wellness, área de pesas y acceso 24/7. ¡Encuentra el que mejor se adapte a ti!">
+	<SchemaMarkup type="Organization" />
+	<Header />
+	
+	<main class="pt-24">
+		<!-- Hero Section -->
+		<section class="py-20 bg-linear-to-br from-gray-900 to-gray-800 text-white">
+			<div class="container mx-auto px-4">
+				<div class="text-center max-w-3xl mx-auto">
+					<h1 class="text-5xl md:text-6xl font-bold font-display mb-6">
+						Nuestros <span class="text-primary">Servicios</span>
+					</h1>
+					<p class="text-xl text-gray-300">
+						Descubre todo lo que GoodGYM ofrece para ayudarte a alcanzar tus metas fitness
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Services Grid -->
+		<section class="py-20 bg-white">
+			<div class="container mx-auto px-4">
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<!-- Entrenamiento Personal -->
+					<a href="/servicios/entrenamiento-personal" class="bg-gray-50 rounded-xl shadow-lg p-8 hover:shadow-xl transition-all hover:scale-105 group">
+						<div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+							<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+							</svg>
+						</div>
+						<h2 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Entrenamiento Personal</h2>
+						<p class="text-gray-600 mb-4">
+							Coaches certificados que diseñan programas personalizados según tus objetivos
+						</p>
+						<span class="text-primary font-semibold">Conocer más →</span>
+					</a>
+
+					<!-- Clases Grupales -->
+					<a href="/servicios/clases-grupales" class="bg-gray-50 rounded-xl shadow-lg p-8 hover:shadow-xl transition-all hover:scale-105 group">
+						<div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+							<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+							</svg>
+						</div>
+						<h2 class="text-2xl font-bold mb-4 group-hover:text-accent transition-colors">Clases Grupales</h2>
+						<p class="text-gray-600 mb-4">
+							50+ clases semanales con instructores expertos para todos los niveles
+						</p>
+						<span class="text-accent font-semibold">Conocer más →</span>
+					</a>
+
+					<!-- Nutrición -->
+					<a href="/servicios/nutricion" class="bg-gray-50 rounded-xl shadow-lg p-8 hover:shadow-xl transition-all hover:scale-105 group">
+						<div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+							<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+						</div>
+						<h2 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Nutrición</h2>
+						<p class="text-gray-600 mb-4">
+							Planes nutricionales personalizados con expertos para optimizar resultados
+						</p>
+						<span class="text-primary font-semibold">Conocer más →</span>
+					</a>
+
+					<!-- Spa & Wellness -->
+					<a href="/servicios/spa-wellness" class="bg-gray-50 rounded-xl shadow-lg p-8 hover:shadow-xl transition-all hover:scale-105 group">
+						<div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+							<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+							</svg>
+						</div>
+						<h2 class="text-2xl font-bold mb-4 group-hover:text-accent transition-colors">Spa & Wellness</h2>
+						<p class="text-gray-600 mb-4">
+							Relájate y recupera con sauna, piscina y masajes terapéuticos
+						</p>
+						<span class="text-accent font-semibold">Conocer más →</span>
+					</a>
+
+					<!-- Área de Pesas -->
+					<a href="/servicios/area-pesas" class="bg-gray-50 rounded-xl shadow-lg p-8 hover:shadow-xl transition-all hover:scale-105 group">
+						<div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+							<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+							</svg>
+						</div>
+						<h2 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Área de Pesas</h2>
+						<p class="text-gray-600 mb-4">
+							100+ equipos de última generación con pesas libres y máquinas
+						</p>
+						<span class="text-primary font-semibold">Conocer más →</span>
+					</a>
+
+					<!-- Acceso 24/7 -->
+					<a href="/servicios/acceso-24-7" class="bg-gray-50 rounded-xl shadow-lg p-8 hover:shadow-xl transition-all hover:scale-105 group">
+						<div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+							<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+						</div>
+						<h2 class="text-2xl font-bold mb-4 group-hover:text-accent transition-colors">Acceso 24/7</h2>
+						<p class="text-gray-600 mb-4">
+							Entrena cuando quieras con acceso las 24 horas, 7 días a la semana
+						</p>
+						<span class="text-accent font-semibold">Conocer más →</span>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="py-20 bg-primary text-white">
+			<div class="container mx-auto px-4 text-center">
+				<h2 class="text-4xl font-bold mb-6">¿Listo para transformar tu vida?</h2>
+				<p class="text-xl mb-8 max-w-2xl mx-auto">
+					Elige el servicio que mejor se adapte a tus metas y comienza tu viaje hoy
+				</p>
+				<a href="/#contact" class="inline-block bg-white text-primary px-10 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+					Contactar Ahora
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

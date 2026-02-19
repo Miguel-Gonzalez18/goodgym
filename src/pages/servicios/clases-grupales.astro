@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/gym/Header.astro';
+import Footer from '../../components/gym/Footer.astro';
+import SchemaMarkup from '../../components/SchemaMarkup.astro';
+---
+
+<Layout title="Clases Grupales en GoodGYM | 50+ Clases Semanales" description="Únete a nuestras 50+ clases grupales semanales. Yoga, HIIT, Zumba, Pilates y más. Instructores expertos para todos los niveles. ¡Entrena en comunidad!">
+	<SchemaMarkup type="Service" data={{name: "Clases Grupales", description: "50+ clases semanales con instructores expertos para todos los niveles", serviceUrl: "https://goodgym.com/servicios/clases-grupales"}} />
+	<Header />
+	
+	<main class="pt-24">
+		<!-- Hero Section -->
+		<section class="py-20 bg-linear-to-br from-gray-900 to-gray-800 text-white">
+			<div class="container mx-auto px-4">
+				<div class="max-w-3xl">
+					<h1 class="text-5xl md:text-6xl font-bold font-display mb-6">
+						Clases <span class="text-accent">Grupales</span>
+					</h1>
+					<p class="text-xl text-gray-300 mb-8">
+						50+ clases semanales con instructores expertos. Energía pura, motivación colectiva y resultados garantizados
+					</p>
+					<a href="/#contact" class="inline-block bg-accent hover:bg-accent/80 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+						Ver Horarios
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Classes Grid -->
+		<section class="py-20 bg-white">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold mb-12 text-center">Nuestras Clases</h2>
+				
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Yoga</h3>
+						<p class="text-gray-600 mb-4">Mejora tu flexibilidad, equilibrio y paz mental con nuestras clases de yoga para todos los niveles</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Yoga Hatha</li>
+							<li>✓ Yoga Vinyasa</li>
+							<li>✓ Yoga Restaurativo</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">HIIT</h3>
+						<p class="text-gray-600 mb-4">Entrenamientos de alta intensidad que queman calorías y mejoran tu resistencia cardiovascular</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ HIIT Cardio</li>
+							<li>✓ HIIT Funcional</li>
+							<li>✓ Tabata</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Zumba</h3>
+						<p class="text-gray-600 mb-4">Baila, diviértete y quema calorías en nuestras energéticas clases de Zumba</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Zumba Básico</li>
+							<li>✓ Zumba Avanzado</li>
+							<li>✓ Zumba Kids</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Pilates</h3>
+						<p class="text-gray-600 mb-4">Fortalece tu core y mejora tu postura con nuestras clases de Pilates</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Pilates Mat</li>
+							<li>✓ Pilates Máquinas</li>
+							<li>✓ Pilates Reformer</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Spinning</h3>
+						<p class="text-gray-600 mb-4">Pedalea al ritmo de la música en nuestras clases de Spinning de alta energía</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Spinning Cardio</li>
+							<li>✓ Spinning Power</li>
+							<li>✓ Spinning Ritmo</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Boxeo</h3>
+						<p class="text-gray-600 mb-4">Aprende técnicas de boxeo y mejora tu fuerza y coordinación</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Boxeo Básico</li>
+							<li>✓ Boxeo Cardio</li>
+							<li>✓ Boxeo Técnico</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Benefits Section -->
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold mb-12 text-center">Beneficios de las Clases Grupales</h2>
+				
+				<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div class="flex gap-4">
+						<div class="shrink-0">
+							<div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+								<svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							</div>
+						</div>
+						<div>
+							<h3 class="text-xl font-bold mb-2">Motivación Colectiva</h3>
+							<p class="text-gray-600">La energía del grupo te mantiene motivado y comprometido</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="shrink-0">
+							<div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+								<svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							</div>
+						</div>
+						<div>
+							<h3 class="text-xl font-bold mb-2">Variedad de Opciones</h3>
+							<p class="text-gray-600">Elige entre 50+ clases diferentes cada semana</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="shrink-0">
+							<div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+								<svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							</div>
+						</div>
+						<div>
+							<h3 class="text-xl font-bold mb-2">Comunidad</h3>
+							<p class="text-gray-600">Conoce gente con tus mismos objetivos y haz amigos</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="shrink-0">
+							<div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+								<svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							</div>
+						</div>
+						<div>
+							<h3 class="text-xl font-bold mb-2">Instructores Expertos</h3>
+							<p class="text-gray-600">Profesionales certificados guiando cada sesión</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="py-20 bg-accent text-white">
+			<div class="container mx-auto px-4 text-center">
+				<h2 class="text-4xl font-bold mb-6">¡Únete a nuestra comunidad!</h2>
+				<p class="text-xl mb-8 max-w-2xl mx-auto">
+					Descubre la clase perfecta para ti y comienza a entrenar en comunidad
+				</p>
+				<a href="/#contact" class="inline-block bg-white text-accent px-10 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+					Ver Horarios Completos
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

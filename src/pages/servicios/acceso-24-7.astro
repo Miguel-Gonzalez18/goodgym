@@ -1,0 +1,170 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/gym/Header.astro';
+import Footer from '../../components/gym/Footer.astro';
+import SchemaMarkup from '../../components/SchemaMarkup.astro';
+---
+
+<Layout title="Acceso 24/7 en GoodGYM | Entrena Cuando Quieras" description="Acceso las 24 horas, 7 días a la semana. Entrena cuando quieras con seguridad garantizada y sin horarios fijos. ¡Tu gimnasio siempre abierto!">
+	<SchemaMarkup type="Service" data={{name: "Acceso 24/7", description: "Entrena cuando quieras con acceso las 24 horas del día, los 7 días de la semana", serviceUrl: "https://goodgym.com/servicios/acceso-24-7"}} />
+	<Header />
+	
+	<main class="pt-24">
+		<!-- Hero Section -->
+		<section class="py-20 bg-linear-to-br from-gray-900 to-gray-800 text-white">
+			<div class="container mx-auto px-4">
+				<div class="max-w-3xl">
+					<h1 class="text-5xl md:text-6xl font-bold font-display mb-6">
+						Acceso <span class="text-accent">24/7</span>
+					</h1>
+					<p class="text-xl text-gray-300 mb-8">
+						Entrena cuando quieras, sin limitaciones de horario. Tu gimnasio siempre abierto para ti
+					</p>
+					<a href="/#contact" class="inline-block bg-accent hover:bg-accent/80 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+						Activar Acceso 24/7
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section class="py-20 bg-white">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold mb-12 text-center">Ventajas del Acceso 24/7</h2>
+				
+				<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Flexibilidad Total</h3>
+						<p class="text-gray-600 mb-4">Entrena a la hora que mejor se adapte a tu rutina, sin estar limitado por horarios</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Madrugadas</li>
+							<li>✓ Noches</li>
+							<li>✓ Fines de semana</li>
+							<li>✓ Cualquier hora</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Sin Aglomeración</h3>
+						<p class="text-gray-600 mb-4">Entrena en horarios menos concurridos y disfruta de más espacio y equipamiento disponible</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Menos gente</li>
+							<li>✓ Más equipamiento disponible</li>
+							<li>✓ Ambiente tranquilo</li>
+							<li>✓ Entrenamientos más efectivos</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Seguridad Garantizada</h3>
+						<p class="text-gray-600 mb-4">Acceso seguro con sistemas de control y vigilancia 24/7</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Control de acceso</li>
+							<li>✓ Cámaras de seguridad</li>
+							<li>✓ Personal de seguridad</li>
+							<li>✓ Ambiente seguro</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Acceso con App</h3>
+						<p class="text-gray-600 mb-4">Descarga nuestra app y accede al gimnasio desde tu teléfono</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Abre con tu teléfono</li>
+							<li>✓ Registro de entrenamientos</li>
+							<li>✓ Reserva de clases</li>
+							<li>✓ Notificaciones</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- How It Works Section -->
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold mb-12 text-center">Cómo funciona</h2>
+				
+				<div class="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+					<div class="text-center">
+						<div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+						<h3 class="text-xl font-bold mb-2">Descarga la App</h3>
+						<p class="text-gray-600">Descarga nuestra app en iOS o Android</p>
+					</div>
+
+					<div class="text-center">
+						<div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+						<h3 class="text-xl font-bold mb-2">Registra tu Acceso</h3>
+						<p class="text-gray-600">Vincula tu membresía a la app</p>
+					</div>
+
+					<div class="text-center">
+						<div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+						<h3 class="text-xl font-bold mb-2">Abre la Puerta</h3>
+						<p class="text-gray-600">Usa tu teléfono para abrir la puerta</p>
+					</div>
+
+					<div class="text-center">
+						<div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
+						<h3 class="text-xl font-bold mb-2">¡A Entrenar!</h3>
+						<p class="text-gray-600">Disfruta del gimnasio cuando quieras</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Perfect For Section -->
+		<section class="py-20 bg-white">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold mb-12 text-center">Perfecto para...</h2>
+				
+				<div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+					<div class="text-center">
+						<div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-bold mb-2">Madrugadores</h3>
+						<p class="text-gray-600">Entrena antes de ir al trabajo sin esperar a que abra el gimnasio</p>
+					</div>
+
+					<div class="text-center">
+						<div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 015.646 5.646 9.001 9.001 0 0020.354 15.354z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-bold mb-2">Nocturnos</h3>
+						<p class="text-gray-600">Entrena de noche cuando te sientas más energizado</p>
+					</div>
+
+					<div class="text-center">
+						<div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-bold mb-2">Ocupados</h3>
+						<p class="text-gray-600">Entrena cuando tu agenda lo permita, sin limitaciones</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="py-20 bg-accent text-white">
+			<div class="container mx-auto px-4 text-center">
+				<h2 class="text-4xl font-bold mb-6">Tu gimnasio siempre abierto</h2>
+				<p class="text-xl mb-8 max-w-2xl mx-auto">
+					Obtén acceso 24/7 y entrena cuando quieras, sin limitaciones de horario
+				</p>
+				<a href="/#contact" class="inline-block bg-white text-accent px-10 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+					Activar Acceso 24/7
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

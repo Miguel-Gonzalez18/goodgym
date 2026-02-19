@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/gym/Header.astro';
+import Footer from '../../components/gym/Footer.astro';
+import SchemaMarkup from '../../components/SchemaMarkup.astro';
+---
+
+<Layout title="Spa & Wellness en GoodGYM | Sauna, Piscina y Masajes" description="Relájate y recupera en nuestro spa con sauna, piscina climatizada y masajes terapéuticos. El complemento perfecto para tu entrenamiento.">
+	<SchemaMarkup type="Service" data={{name: "Spa & Wellness", description: "Relájate y recupera en nuestro spa con sauna, piscina y servicios de masajes", serviceUrl: "https://goodgym.com/servicios/spa-wellness"}} />
+	<Header />
+	
+	<main class="pt-24">
+		<!-- Hero Section -->
+		<section class="py-20 bg-linear-to-br from-gray-900 to-gray-800 text-white">
+			<div class="container mx-auto px-4">
+				<div class="max-w-3xl">
+					<h1 class="text-5xl md:text-6xl font-bold font-display mb-6">
+						Spa & <span class="text-accent">Wellness</span>
+					</h1>
+					<p class="text-xl text-gray-300 mb-8">
+						Relájate, recupera y rejuvenece en nuestro spa de clase mundial
+					</p>
+					<a href="/#contact" class="inline-block bg-accent hover:bg-accent/80 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+						Reservar Sesión
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Services Section -->
+		<section class="py-20 bg-white">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold mb-12 text-center">Nuestros Servicios de Spa</h2>
+				
+				<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Sauna</h3>
+						<p class="text-gray-600 mb-4">Relájate en nuestras saunas de vapor y secas para desintoxicar tu cuerpo y aliviar la tensión muscular</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Sauna seca tradicional</li>
+							<li>✓ Sauna de vapor</li>
+							<li>✓ Sauna infrarroja</li>
+							<li>✓ Acceso ilimitado</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Piscina Climatizada</h3>
+						<p class="text-gray-600 mb-4">Nada, relájate o simplemente disfruta de nuestra piscina climatizada de temperatura perfecta</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Temperatura controlada</li>
+							<li>✓ Agua filtrada y limpia</li>
+							<li>✓ Área de relajación</li>
+							<li>✓ Acceso 24/7</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Masajes Profesionales</h3>
+						<p class="text-gray-600 mb-4">Masajes terapéuticos realizados por profesionales certificados para aliviar tensión y acelerar recuperación</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Masaje sueco</li>
+							<li>✓ Masaje deportivo</li>
+							<li>✓ Masaje tailandés</li>
+							<li>✓ Masaje de tejido profundo</li>
+						</ul>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-8">
+						<h3 class="text-2xl font-bold mb-4">Tratamientos Faciales</h3>
+						<p class="text-gray-600 mb-4">Cuida tu piel con nuestros tratamientos faciales profesionales y productos de calidad</p>
+						<ul class="space-y-2 text-gray-600 text-sm">
+							<li>✓ Limpieza profunda</li>
+							<li>✓ Hidratación intensiva</li>
+							<li>✓ Anti-envejecimiento</li>
+							<li>✓ Tratamientos especiales</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Benefits Section -->
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold mb-12 text-center">Beneficios del Spa & Wellness</h2>
+				
+				<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div class="flex gap-4">
+						<div class="shrink-0">
+							<div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+								<svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							</div>
+						</div>
+						<div>
+							<h3 class="text-xl font-bold mb-2">Recuperación Muscular</h3>
+							<p class="text-gray-600">Acelera la recuperación después de entrenamientos intensos</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="shrink-0">
+							<div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+								<svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							</div>
+						</div>
+						<div>
+							<h3 class="text-xl font-bold mb-2">Reducción de Estrés</h3>
+							<p class="text-gray-600">Relájate y reduce el estrés del día a día</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="shrink-0">
+							<div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+								<svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							</div>
+						</div>
+						<div>
+							<h3 class="text-xl font-bold mb-2">Mejora de Circulación</h3>
+							<p class="text-gray-600">Aumenta el flujo sanguíneo y la oxigenación</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="shrink-0">
+							<div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+								<svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							</div>
+						</div>
+						<div>
+							<h3 class="text-xl font-bold mb-2">Bienestar General</h3>
+							<p class="text-gray-600">Mejora tu salud física y mental</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="py-20 bg-accent text-white">
+			<div class="container mx-auto px-4 text-center">
+				<h2 class="text-4xl font-bold mb-6">Relájate y recupera</h2>
+				<p class="text-xl mb-8 max-w-2xl mx-auto">
+					Completa tu entrenamiento con nuestros servicios de spa y wellness
+				</p>
+				<a href="/#contact" class="inline-block bg-white text-accent px-10 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+					Reservar Ahora
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

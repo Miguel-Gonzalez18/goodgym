@@ -6,56 +6,156 @@ export interface Props {
 const { currentPath = "/" } = Astro.props;
 ---
 
-<header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
-  <nav class="container mx-auto px-4 py-4">
+<header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-500 header-transparent">
+  <nav class="container mx-auto px-6 py-5">
     <div class="flex items-center justify-between">
       <!-- Logo -->
-      <div class="flex items-center space-x-2">
-        <div class="w-10 h-10 bg-linear-to-r from-primary to-primary-dark rounded-lg flex items-center justify-center">
-          <span class="text-white font-bold text-xl">G</span>
-        </div>
-        <span class="text-2xl font-bold text-dark">GoodGYM</span>
-      </div>
+      <a href="/" class="flex items-center gap-2 group">
+        <span class="text-2xl font-display font-extrabold tracking-tight text-white transition-colors">
+          GOOD<span class="text-primary">GYM</span>
+        </span>
+      </a>
 
       <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="#services" class="text-gray-700 hover:text-primary transition-colors font-medium">Servicios</a>
-        <a href="#testimonials" class="text-gray-700 hover:text-primary transition-colors font-medium">Testimonios</a>
-        <a href="#pricing" class="text-gray-700 hover:text-primary transition-colors font-medium">Precios</a>
-        <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium">Contacto</a>
-        <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors font-semibold">
+      <div class="hidden lg:flex items-center gap-1">
+        <a href="/#services" class="nav-link">Servicios</a>
+        <a href="/#testimonials" class="nav-link">Testimonios</a>
+        <a href="/#pricing" class="nav-link">Precios</a>
+        <a href="/blog" class="nav-link">Blog</a>
+        <a href="/#contact" class="nav-link">Contacto</a>
+      </div>
+
+      <div class="hidden lg:block">
+        <a href="/#contact" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-primary-dark transition-all duration-300 hover:shadow-lg hover:shadow-primary/25">
           Empezar Ahora
-        </button>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button class="md:hidden p-2" id="mobile-menu-button">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button class="lg:hidden p-2 text-white" id="mobile-menu-button" aria-label="Abrir menú">
+        <svg class="w-6 h-6" id="menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg class="w-6 h-6 hidden" id="menu-icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
     </div>
 
     <!-- Mobile Menu -->
-    <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
-      <div class="flex flex-col space-y-3">
-        <a href="#services" class="text-gray-700 hover:text-primary transition-colors font-medium">Servicios</a>
-        <a href="#testimonials" class="text-gray-700 hover:text-primary transition-colors font-medium">Testimonios</a>
-        <a href="#pricing" class="text-gray-700 hover:text-primary transition-colors font-medium">Precios</a>
-        <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium">Contacto</a>
-        <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors font-semibold w-full">
+    <div class="hidden lg:hidden mt-6 pb-4" id="mobile-menu">
+      <div class="flex flex-col gap-1 border-t border-white/10 pt-6">
+        <a href="/#services" class="mobile-nav-link">Servicios</a>
+        <a href="/#testimonials" class="mobile-nav-link">Testimonios</a>
+        <a href="/#pricing" class="mobile-nav-link">Precios</a>
+        <a href="/blog" class="mobile-nav-link">Blog</a>
+        <a href="/#contact" class="mobile-nav-link">Contacto</a>
+        <a href="/#contact" class="mt-4 bg-primary text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-primary-dark transition-colors">
           Empezar Ahora
-        </button>
+        </a>
       </div>
     </div>
   </nav>
 </header>
 
+<style>
+  .header-transparent {
+    background: transparent;
+  }
+  .header-solid {
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-block: 0;
+  }
+  .header-solid nav {
+    padding-block: 0.75rem;
+  }
+  .nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+    letter-spacing: 0.01em;
+  }
+  .nav-link:hover {
+    color: #fff;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+  .mobile-nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    border-radius: 0.5rem;
+  }
+  .mobile-nav-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 1.5rem;
+  }
+</style>
+
 <script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  
-  mobileMenuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
-  });
+  function initHeader() {
+    const header = document.getElementById('main-header');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    const updateHeader = () => {
+      if (!header) return;
+      if (window.scrollY > 50) {
+        header.classList.remove('header-transparent');
+        header.classList.add('header-solid');
+      } else {
+        header.classList.remove('header-solid');
+        header.classList.add('header-transparent');
+      }
+    };
+
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+
+    mobileMenuButton?.addEventListener('click', () => {
+      const isOpen = !mobileMenu?.classList.contains('hidden');
+      mobileMenu?.classList.toggle('hidden');
+      iconOpen?.classList.toggle('hidden');
+      iconClose?.classList.toggle('hidden');
+      if (!isOpen && header) {
+        header.classList.remove('header-transparent');
+        header.classList.add('header-solid');
+      }
+    });
+
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        iconOpen?.classList.remove('hidden');
+        iconClose?.classList.add('hidden');
+      });
+    });
+  }
+
+  initHeader();
+  document.addEventListener('astro:after-swap', initHeader);
+  document.addEventListener('astro:page-load', initHeader);
 </script>

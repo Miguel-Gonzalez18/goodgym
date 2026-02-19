@@ -1,0 +1,131 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/gym/Header.astro';
+import Footer from '../../components/gym/Footer.astro';
+---
+
+<Layout title="Blog GoodGYM | Tips de Fitness y Nutrición" description="Lee nuestros artículos sobre fitness, nutrición, entrenamientos y bienestar. Consejos de expertos para alcanzar tus metas.">
+	<Header />
+	
+	<main class="pt-24">
+		<!-- Hero Section -->
+		<section class="py-20 bg-linear-to-br from-gray-900 to-gray-800 text-white">
+			<div class="container mx-auto px-4">
+				<div class="text-center max-w-3xl mx-auto">
+					<h1 class="text-5xl md:text-6xl font-bold font-display mb-6">
+						Blog <span class="text-primary">GoodGYM</span>
+					</h1>
+					<p class="text-xl text-gray-300">
+						Consejos, tips y artículos sobre fitness, nutrición y bienestar
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Blog Posts Grid -->
+		<section class="py-20 bg-white">
+			<div class="container mx-auto px-4">
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<!-- Post 1 -->
+					<article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+						<div class="h-48 bg-linear-to-br from-primary to-primary-dark"></div>
+						<div class="p-6">
+							<div class="flex items-center gap-2 mb-3">
+								<span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">Fitness</span>
+								<span class="text-xs text-gray-500">19 Feb 2026</span>
+							</div>
+							<h2 class="text-2xl font-bold mb-3">10 Ejercicios para Principiantes</h2>
+							<p class="text-gray-600 mb-4">Descubre los 10 ejercicios más efectivos para comenzar tu viaje fitness sin experiencia previa.</p>
+							<a href="/blog/10-ejercicios-principiantes" class="text-primary font-semibold hover:text-primary-dark">Leer más →</a>
+						</div>
+					</article>
+
+					<!-- Post 2 -->
+					<article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+						<div class="h-48 bg-linear-to-br from-accent to-accent/80"></div>
+						<div class="p-6">
+							<div class="flex items-center gap-2 mb-3">
+								<span class="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full">Nutrición</span>
+								<span class="text-xs text-gray-500">19 Feb 2026</span>
+							</div>
+							<h2 class="text-2xl font-bold mb-3">Nutrición para Ganancia Muscular</h2>
+							<p class="text-gray-600 mb-4">Aprende qué comer para maximizar tu ganancia muscular y acelerar tu transformación.</p>
+							<a href="/blog/nutricion-ganancia-muscular" class="text-accent font-semibold hover:text-accent/80">Leer más →</a>
+						</div>
+					</article>
+
+					<!-- Post 3 -->
+					<article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+						<div class="h-48 bg-linear-to-br from-primary to-accent"></div>
+						<div class="p-6">
+							<div class="flex items-center gap-2 mb-3">
+								<span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">Entrenamientos</span>
+								<span class="text-xs text-gray-500">19 Feb 2026</span>
+							</div>
+							<h2 class="text-2xl font-bold mb-3">Rutinas HIIT Efectivas</h2>
+							<p class="text-gray-600 mb-4">Descubre las mejores rutinas de entrenamiento de alta intensidad para quemar grasa rápidamente.</p>
+							<a href="/blog/rutinas-hiit-efectivas" class="text-primary font-semibold hover:text-primary-dark">Leer más →</a>
+						</div>
+					</article>
+
+					<!-- Post 4 -->
+					<article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+						<div class="h-48 bg-linear-to-br from-secondary to-secondary/80"></div>
+						<div class="p-6">
+							<div class="flex items-center gap-2 mb-3">
+								<span class="text-xs font-semibold text-secondary bg-secondary/10 px-3 py-1 rounded-full">Bienestar</span>
+								<span class="text-xs text-gray-500">19 Feb 2026</span>
+							</div>
+							<h2 class="text-2xl font-bold mb-3">Recuperación Post-Entrenamiento</h2>
+							<p class="text-gray-600 mb-4">Estrategias efectivas para recuperarte mejor después de tus entrenamientos intensos.</p>
+							<a href="/blog/recuperacion-post-entrenamiento" class="text-secondary font-semibold hover:text-secondary/80">Leer más →</a>
+						</div>
+					</article>
+
+					<!-- Post 5 -->
+					<article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+						<div class="h-48 bg-linear-to-br from-accent to-primary"></div>
+						<div class="p-6">
+							<div class="flex items-center gap-2 mb-3">
+								<span class="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full">Nutrición</span>
+								<span class="text-xs text-gray-500">19 Feb 2026</span>
+							</div>
+							<h2 class="text-2xl font-bold mb-3">Suplementos Esenciales</h2>
+							<p class="text-gray-600 mb-4">Guía completa sobre los suplementos más importantes para potenciar tu entrenamiento.</p>
+							<a href="/blog/suplementos-esenciales" class="text-accent font-semibold hover:text-accent/80">Leer más →</a>
+						</div>
+					</article>
+
+					<!-- Post 6 -->
+					<article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+						<div class="h-48 bg-linear-to-br from-primary/80 to-accent/80"></div>
+						<div class="p-6">
+							<div class="flex items-center gap-2 mb-3">
+								<span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">Fitness</span>
+								<span class="text-xs text-gray-500">19 Feb 2026</span>
+							</div>
+							<h2 class="text-2xl font-bold mb-3">Cómo Establecer Metas Realistas</h2>
+							<p class="text-gray-600 mb-4">Aprende a establecer metas fitness realistas y alcanzables para mantener la motivación.</p>
+							<a href="/blog/metas-realistas" class="text-primary font-semibold hover:text-primary-dark">Leer más →</a>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 text-center">
+				<h2 class="text-4xl font-bold mb-6">¿Listo para transformar tu vida?</h2>
+				<p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+					Aplica los consejos de nuestro blog y comienza tu viaje de transformación hoy
+				</p>
+				<a href="/#contact" class="inline-block bg-primary text-white px-10 py-4 rounded-lg font-semibold hover:bg-primary-dark transition-colors">
+					Contactar Ahora
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

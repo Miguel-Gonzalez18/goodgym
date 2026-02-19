@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/gym/Header.astro';
+import Footer from '../../components/gym/Footer.astro';
+---
+
+<Layout title="Rutinas HIIT Efectivas | GoodGYM Blog" description="Descubre las mejores rutinas de entrenamiento HIIT para quemar grasa rápidamente. Entrenamientos de alta intensidad probados.">
+	<Header />
+	
+	<main class="pt-24">
+		<section class="py-12 bg-linear-to-br from-gray-900 to-gray-800 text-white">
+			<div class="container mx-auto px-4 max-w-3xl">
+				<div class="flex items-center gap-2 mb-4">
+					<span class="text-xs font-semibold text-primary bg-primary/20 px-3 py-1 rounded-full">Entrenamientos</span>
+					<span class="text-sm text-gray-400">19 Feb 2026</span>
+				</div>
+				<h1 class="text-5xl font-bold font-display mb-4">Rutinas HIIT Efectivas</h1>
+				<p class="text-xl text-gray-300">Descubre las mejores rutinas de entrenamiento de alta intensidad para quemar grasa rápidamente</p>
+			</div>
+		</section>
+
+		<article class="py-12 bg-white">
+			<div class="container mx-auto px-4 max-w-3xl prose prose-lg">
+				<h2>¿Qué es HIIT?</h2>
+				<p>
+					HIIT (High Intensity Interval Training) es un método de entrenamiento que alterna períodos de esfuerzo máximo con períodos de recuperación. Es altamente efectivo para quemar grasa y mejorar la resistencia cardiovascular.
+				</p>
+
+				<h2>Beneficios del HIIT</h2>
+				<ul>
+					<li>Quema más calorías en menos tiempo</li>
+					<li>Aumenta el metabolismo post-entrenamiento</li>
+					<li>Mejora la resistencia cardiovascular</li>
+					<li>No requiere equipamiento</li>
+					<li>Resultados visibles en 4-6 semanas</li>
+				</ul>
+
+				<h2>Rutina HIIT #1: Tabata Clásico (20 minutos)</h2>
+				<p>
+					Realiza cada ejercicio durante 20 segundos a máxima intensidad, descansa 10 segundos. Completa 8 rondas de cada ejercicio.
+				</p>
+				<ul>
+					<li>Burpees</li>
+					<li>Mountain climbers</li>
+					<li>Jumping jacks</li>
+					<li>Sentadillas con salto</li>
+				</ul>
+
+				<h2>Rutina HIIT #2: 30/30 (25 minutos)</h2>
+				<p>
+					30 segundos de trabajo, 30 segundos de descanso. Realiza 5 rondas completas.
+				</p>
+				<ul>
+					<li>Sprints en lugar</li>
+					<li>Flexiones explosivas</li>
+					<li>Sentadillas</li>
+					<li>Abdominales</li>
+					<li>Estocadas alternas</li>
+				</ul>
+
+				<h2>Rutina HIIT #3: Pirámide (30 minutos)</h2>
+				<p>
+					Comienza con 10 segundos, aumenta 10 segundos cada ronda hasta 50, luego disminuye.
+				</p>
+				<ul>
+					<li>Burpees</li>
+					<li>Descanso igual al trabajo</li>
+					<li>Repite con diferentes ejercicios</li>
+				</ul>
+
+				<h2>Rutina HIIT #4: EMOM (Every Minute On the Minute) (20 minutos)</h2>
+				<p>
+					Al inicio de cada minuto, realiza el ejercicio. El tiempo restante es descanso.
+				</p>
+				<ul>
+					<li>Minuto 1: 15 burpees</li>
+					<li>Minuto 2: 20 jumping jacks</li>
+					<li>Minuto 3: 15 sentadillas</li>
+					<li>Minuto 4: 10 flexiones</li>
+					<li>Repite 5 veces</li>
+				</ul>
+
+				<h2>Consejos para Maximizar Resultados</h2>
+				<ul>
+					<li><strong>Intensidad:</strong> Trabaja al 90-100% de tu capacidad máxima</li>
+					<li><strong>Descanso:</strong> Descansa adecuadamente entre entrenamientos</li>
+					<li><strong>Nutrición:</strong> Come bien para recuperarte</li>
+					<li><strong>Consistencia:</strong> Realiza HIIT 2-3 veces por semana</li>
+					<li><strong>Variedad:</strong> Cambia los ejercicios regularmente</li>
+				</ul>
+
+				<h2>Errores Comunes</h2>
+				<ul>
+					<li>No trabajar con suficiente intensidad</li>
+					<li>Hacer HIIT todos los días (causa sobrentrenamiento)</li>
+					<li>Mala técnica en los ejercicios</li>
+					<li>No calentar adecuadamente</li>
+					<li>Ignorar la recuperación</li>
+				</ul>
+
+				<h2>Conclusión</h2>
+				<p>
+					El HIIT es una forma efectiva y eficiente de entrenar. Con estas rutinas y consistencia, verás resultados en poco tiempo. Recuerda que la calidad es más importante que la cantidad.
+				</p>
+			</div>
+		</article>
+
+		<section class="py-12 bg-gray-50">
+			<div class="container mx-auto px-4 text-center max-w-3xl">
+				<h2 class="text-3xl font-bold mb-4">Únete a Nuestras Clases HIIT</h2>
+				<p class="text-lg text-gray-600 mb-6">
+					Entrena con instructores expertos en nuestras clases de HIIT
+				</p>
+				<a href="/servicios/clases-grupales" class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors">
+					Ver Clases
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>
